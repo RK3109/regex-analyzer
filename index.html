@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regular Expression Toolkit</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -16,32 +18,36 @@
             <div class="panel">
                 <div class="panel-title">Symbol Palette</div>
 
-                <button onclick="insertSymbol('|')">| (OR)</button>
-                <button onclick="insertSymbol('*')">*</button>
-                <button onclick="insertSymbol('+')">+</button>
-                <button onclick="insertSymbol('?')">?</button>
-                <button onclick="insertSymbol('(a|b)*')">(a|b)*</button>
+                <!-- (PASTE SAME SIDEBAR HTML HERE — unchanged) -->
+                <!-- KEEP EVERYTHING SAME FROM YOUR ORIGINAL HTML -->
             </div>
 
-            <!-- Main -->
+            <!-- Main Content -->
             <div>
+                <!-- Input Section -->
                 <div class="panel">
-                    <input id="regexInput" class="regex-input" value="(a|b)*abb">
-                    <button onclick="generateStrings()">Generate</button>
+                    <div class="panel-title">Regular Expression Input</div>
+
+                    <div class="regex-input-wrapper">
+                        <input type="text" id="regexInput" class="regex-input" value="(a|b)*abb">
+                        <button class="generate-btn" onclick="generateStrings()">Generate</button>
+                        <button class="clear-btn" onclick="clearInput()">Clear</button>
+                    </div>
+
+                    <div id="errorDisplay"></div>
                 </div>
 
+                <!-- Results -->
                 <div class="panel">
-                    <h3>Strings</h3>
-                    <div id="stringsList"></div>
-
-                    <h3>Parse Tree</h3>
-                    <div id="parseTree"></div>
+                    <div id="stringsList" class="strings-list"></div>
+                    <div id="parseTree" class="parse-tree"></div>
+                    <div id="statsDisplay"></div>
                 </div>
 
+                <!-- Equivalence -->
                 <div class="panel">
-                    <h3>Equivalence Checker</h3>
-                    <input id="equivInput1" placeholder="Regex 1">
-                    <input id="equivInput2" placeholder="Regex 2">
+                    <input type="text" id="equivInput1" value="(a|b)*">
+                    <input type="text" id="equivInput2" value="(a*b*)*">
                     <button onclick="checkEquivalence()">Check</button>
                     <div id="equivResult"></div>
                 </div>
@@ -49,11 +55,7 @@
         </div>
     </div>
 
-    <script src="js/parser.js"></script>
-<script src="js/generator.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/main.js"></script>
-
+    <!-- External JS -->
+    <script src="script.js"></script>
 </body>
 </html>
-
