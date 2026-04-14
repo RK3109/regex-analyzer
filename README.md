@@ -16,8 +16,4 @@ A web-based tool to:
 - CSS
 - JavaScript (Vanilla)
 
-## How to Run
-1. Clone repo
-2. Open index.html in browser
 
-## Example
