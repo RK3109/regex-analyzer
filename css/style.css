@@ -1,0 +1,23 @@
+body {
+    font-family: Arial;
+    background: #1a1a2e;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.panel {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.regex-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
