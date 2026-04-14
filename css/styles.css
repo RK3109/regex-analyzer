@@ -1,23 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
-    background: #1a1a2e;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #e8e8e8;
+    padding: 20px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .panel {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
     padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.panel-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.panel-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, #00d4ff, #7c3aed);
+    border-radius: 2px;
+}
+
+/* Palette */
+.palette-section {
+    margin-bottom: 20px;
+}
+
+.palette-section-title {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.palette-btn {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #e8e8e8;
+    padding: 8px 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.palette-btn:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+}
+
+.palette-btn .symbol {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+.palette-btn .desc {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+/* Input */
+.regex-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .regex-input {
-    width: 100%;
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    color: #00d4ff;
+    font-family: 'Consolas', monospace;
+    font-size: 1.2rem;
+}
+
+.regex-input:focus {
+    border-color: #00d4ff;
+}
+
+.generate-btn {
+    background: linear-gradient(135deg, #00d4ff, #7c3aed);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Results */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.strings-list, .parse-tree {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.string-item {
+    padding: 8px;
+    margin-bottom: 5px;
+    background: rgba(0, 212, 255, 0.1);
+    border-left: 3px solid #00d4ff;
+}
+
+/* Equivalence */
+.equiv-input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #7c3aed;
+    border-radius: 10px;
     padding: 10px;
-    font-size: 18px;
+    color: #7c3aed;
+}
+
+.check-equiv-btn {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.equiv-result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.equiv-result.equivalent {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.equiv-result.not-equivalent {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
 }
