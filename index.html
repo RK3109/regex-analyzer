@@ -8,6 +8,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Regular Expression Toolkit</h1>
@@ -18,36 +19,62 @@
             <div class="panel">
                 <div class="panel-title">Symbol Palette</div>
 
-                <!-- (PASTE SAME SIDEBAR HTML HERE — unchanged) -->
-                <!-- KEEP EVERYTHING SAME FROM YOUR ORIGINAL HTML -->
+                <div class="palette-section">
+                    <div class="palette-section-title">Basic Operators</div>
+                    <div class="palette-grid">
+                        <button class="palette-btn" onclick="insertSymbol('|')"><span class="symbol">|</span><span class="desc">Union</span></button>
+                        <button class="palette-btn" onclick="insertSymbol('*')"><span class="symbol">*</span><span class="desc">Star</span></button>
+                        <button class="palette-btn" onclick="insertSymbol('+')"><span class="symbol">+</span><span class="desc">Plus</span></button>
+                        <button class="palette-btn" onclick="insertSymbol('?')"><span class="symbol">?</span><span class="desc">Optional</span></button>
+                    </div>
+                </div>
+
+                <div class="palette-section">
+                    <div class="palette-section-title">Grouping</div>
+                    <div class="palette-grid">
+                        <button class="palette-btn" onclick="insertSymbol('()')">( )</button>
+                        <button class="palette-btn" onclick="insertSymbol('ε')">ε</button>
+                        <button class="palette-btn" onclick="insertSymbol('∅')">∅</button>
+                    </div>
+                </div>
+
+                <div class="palette-section">
+                    <div class="palette-section-title">Examples</div>
+                    <div class="example-btns">
+                        <button class="example-btn" onclick="loadExample('(a|b)*abb')">ends abb</button>
+                        <button class="example-btn" onclick="loadExample('a*b*c*')">a*b*c*</button>
+                    </div>
+                </div>
             </div>
 
-            <!-- Main Content -->
+            <!-- Main -->
             <div>
-                <!-- Input Section -->
                 <div class="panel">
-                    <div class="panel-title">Regular Expression Input</div>
+                    <div class="panel-title">Regex Input</div>
 
                     <div class="regex-input-wrapper">
-                        <input type="text" id="regexInput" class="regex-input" value="(a|b)*abb">
+                        <input id="regexInput" class="regex-input" value="(a|b)*abb">
                         <button class="generate-btn" onclick="generateStrings()">Generate</button>
-                        <button class="clear-btn" onclick="clearInput()">Clear</button>
                     </div>
 
                     <div id="errorDisplay"></div>
                 </div>
 
-                <!-- Results -->
                 <div class="panel">
-                    <div id="stringsList" class="strings-list"></div>
-                    <div id="parseTree" class="parse-tree"></div>
-                    <div id="statsDisplay"></div>
+                    <div class="panel-title">Results</div>
+
+                    <div class="results-grid">
+                        <div id="stringsList"></div>
+                        <div id="parseTree"></div>
+                    </div>
                 </div>
 
-                <!-- Equivalence -->
                 <div class="panel">
-                    <input type="text" id="equivInput1" value="(a|b)*">
-                    <input type="text" id="equivInput2" value="(a*b*)*">
+                    <div class="panel-title">Equivalence</div>
+
+                    <input id="equivInput1" value="(a|b)*">
+                    <input id="equivInput2" value="(a*b*)*">
+
                     <button onclick="checkEquivalence()">Check</button>
                     <div id="equivResult"></div>
                 </div>
