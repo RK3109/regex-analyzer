@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression Toolkit</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Regular Expression Toolkit</h1>
+        <p class="subtitle">Generate strings, visualize parse trees, and verify equivalence</p>
+
+        <div class="main-grid">
+            <!-- Sidebar -->
+            <div class="panel">
+                <div class="panel-title">Symbol Palette</div>
+
+                <button onclick="insertSymbol('|')">| (OR)</button>
+                <button onclick="insertSymbol('*')">*</button>
+                <button onclick="insertSymbol('+')">+</button>
+                <button onclick="insertSymbol('?')">?</button>
+                <button onclick="insertSymbol('(a|b)*')">(a|b)*</button>
+            </div>
+
+            <!-- Main -->
+            <div>
+                <div class="panel">
+                    <input id="regexInput" class="regex-input" value="(a|b)*abb">
+                    <button onclick="generateStrings()">Generate</button>
+                </div>
+
+                <div class="panel">
+                    <h3>Strings</h3>
+                    <div id="stringsList"></div>
+
+                    <h3>Parse Tree</h3>
+                    <div id="parseTree"></div>
+                </div>
+
+                <div class="panel">
+                    <h3>Equivalence Checker</h3>
+                    <input id="equivInput1" placeholder="Regex 1">
+                    <input id="equivInput2" placeholder="Regex 2">
+                    <button onclick="checkEquivalence()">Check</button>
+                    <div id="equivResult"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/parser.js"></script>
+    <script src="js/generator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
 
