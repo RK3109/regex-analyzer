@@ -1,16 +1,23 @@
 # Regular Expression Toolkit
 
+A web-based tool to:
+- Generate strings from regex
+- Visualize parse trees
+- Check equivalence of regex
+
 ## Features
-- Regex parsing
-- String generation
+- Regex parser (AST based)
+- String generation with constraints
 - Parse tree visualization
-- Equivalence checking (basic)
+- Equivalence checker
+
+## Tech Stack
+- HTML
+- CSS
+- JavaScript (Vanilla)
 
 ## How to Run
 1. Clone repo
 2. Open index.html in browser
 
-## Future Improvements
-- Full DFA/NFA conversion
-- Advanced equivalence checking
-- Better UI
+## Example
